@@ -1,0 +1,71 @@
+services:
+    app:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        container_name: mini_wallet_app
+        restart: unless-stopped
+        working_dir: /var/www
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./:/var/www
+            - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+        networks:
+            - mini-wallet-network
+        depends_on:
+            - db
+            - redis
+        command: php artisan serve && npm run serve
+        #command: php artisan serve --host=0.0.0.0 --port=8000
+
+    db:
+        image: mysql:8.0
+        container_name: mini_wallet_db
+        restart: unless-stopped
+        environment:
+            MYSQL_DATABASE: mini_wallet_db
+            MYSQL_USER: mini_wallet
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: root
+            TZ: UTC
+        command: >-
+          --default-authentication-plugin=mysql_native_password
+          --transaction-isolation=READ-COMMITTED
+          --binlog-format=ROW
+          --innodb-flush-log-at-trx-commit=1
+          --innodb-file-per-table=1
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./storage/db-data:/var/lib/mysql
+        networks:
+            - mini-wallet-network
+    mini_wallet_test_db:
+        container_name: mini_wallet_test_db
+        tty: true
+        image: mysql:8.1
+        environment:
+            MYSQL_DATABASE: mini_wallet_test_db
+            MYSQL_USER: min_wallet
+            MYSQL_PASSWORD: secret
+            MYSQL_ROOT_PASSWORD: root
+
+        ports:
+            - "6307:3306"
+        volumes:
+            - ./storage/db-data-test:/var/lib/mysql
+    redis:
+        image: redis:7-alpine
+        container_name: mini_wallet_redis
+        restart: unless-stopped
+        volumes:
+            - redisdata:/data
+        networks:
+            - mini-wallet-network
+networks:
+    mini-wallet-network:
+        driver: bridge
+
+volumes:
+    redisdata:

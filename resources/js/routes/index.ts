@@ -364,3 +364,77 @@ dashboardForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> =
 })
 
 dashboard.form = dashboardForm
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+export const wallet = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: wallet.url(options),
+    method: 'get',
+})
+
+wallet.definition = {
+    methods: ["get","head"],
+    url: '/wallet',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+wallet.url = (options?: RouteQueryOptions) => {
+    return wallet.definition.url + queryParams(options)
+}
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+wallet.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: wallet.url(options),
+    method: 'get',
+})
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+wallet.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: wallet.url(options),
+    method: 'head',
+})
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+const walletForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: wallet.url(options),
+    method: 'get',
+})
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+walletForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: wallet.url(options),
+    method: 'get',
+})
+
+/**
+* @see routes/web.php:18
+* @route '/wallet'
+*/
+walletForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: wallet.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+wallet.form = walletForm

@@ -63,7 +63,7 @@ class TransactionCompleted
             'receiver_update' => $this->receiverUpdate,
             'sender_balance' => $sender?->balance,
             'receiver_balance' => $receiver?->balance,
-            
+
         ];
     }
 

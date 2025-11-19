@@ -2,9 +2,10 @@
 import AppLayout from '@/layouts/AppLayout.vue';
 import { dashboard } from '@/routes';
 import { type BreadcrumbItem } from '@/types';
-import { Head } from '@inertiajs/vue3';
-import PlaceholderPattern from '../components/PlaceholderPattern.vue';
+import { Head, usePage } from '@inertiajs/vue3';
 import WalletDashboard from '@/components/wallet/WalletDashboard.vue';
+import { useAuth } from '@/composables/useAuth';
+import { onMounted } from 'vue';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -12,6 +13,18 @@ const breadcrumbs: BreadcrumbItem[] = [
         href: dashboard().url,
     },
 ];
+
+
+const page = usePage();
+const { storeToken } = useAuth();
+
+onMounted(() => {
+    const token = (page.props as any);
+    if (token) {
+        storeToken(token);
+    }
+});
+
 </script>
 
 <template>

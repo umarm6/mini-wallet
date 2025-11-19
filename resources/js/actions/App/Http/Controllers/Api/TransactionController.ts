@@ -2,7 +2,7 @@ import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFo
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -11,13 +11,13 @@ export const index = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 
 index.definition = {
     methods: ["get","head"],
-    url: '/api/v1/transactions',
+    url: '/api/transactions',
 } satisfies RouteDefinition<["get","head"]>
 
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 index.url = (options?: RouteQueryOptions) => {
     return index.definition.url + queryParams(options)
@@ -26,7 +26,7 @@ index.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
     url: index.url(options),
@@ -36,7 +36,7 @@ index.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
     url: index.url(options),
@@ -46,7 +46,7 @@ index.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -56,7 +56,7 @@ const indexForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => (
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url(options),
@@ -66,7 +66,7 @@ indexForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 /**
 * @see \App\Http\Controllers\Api\TransactionController::index
 * @see app/Http/Controllers/Api/TransactionController.php:21
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 indexForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
     action: index.url({
@@ -83,7 +83,7 @@ index.form = indexForm
 /**
 * @see \App\Http\Controllers\Api\TransactionController::store
 * @see app/Http/Controllers/Api/TransactionController.php:37
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -92,13 +92,13 @@ export const store = (options?: RouteQueryOptions): RouteDefinition<'post'> => (
 
 store.definition = {
     methods: ["post"],
-    url: '/api/v1/transactions',
+    url: '/api/transactions',
 } satisfies RouteDefinition<["post"]>
 
 /**
 * @see \App\Http\Controllers\Api\TransactionController::store
 * @see app/Http/Controllers/Api/TransactionController.php:37
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 store.url = (options?: RouteQueryOptions) => {
     return store.definition.url + queryParams(options)
@@ -107,7 +107,7 @@ store.url = (options?: RouteQueryOptions) => {
 /**
 * @see \App\Http\Controllers\Api\TransactionController::store
 * @see app/Http/Controllers/Api/TransactionController.php:37
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
     url: store.url(options),
@@ -117,7 +117,7 @@ store.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
 /**
 * @see \App\Http\Controllers\Api\TransactionController::store
 * @see app/Http/Controllers/Api/TransactionController.php:37
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: store.url(options),
@@ -127,7 +127,7 @@ const storeForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => 
 /**
 * @see \App\Http\Controllers\Api\TransactionController::store
 * @see app/Http/Controllers/Api/TransactionController.php:37
-* @route '/api/v1/transactions'
+* @route '/api/transactions'
 */
 storeForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
     action: store.url(options),

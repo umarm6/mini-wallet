@@ -112,6 +112,87 @@ loginForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => (
 login.form = loginForm
 
 /**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+export const getDemoUsers = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: getDemoUsers.url(options),
+    method: 'get',
+})
+
+getDemoUsers.definition = {
+    methods: ["get","head"],
+    url: '/api/demo-users',
+} satisfies RouteDefinition<["get","head"]>
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+getDemoUsers.url = (options?: RouteQueryOptions) => {
+    return getDemoUsers.definition.url + queryParams(options)
+}
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+getDemoUsers.get = (options?: RouteQueryOptions): RouteDefinition<'get'> => ({
+    url: getDemoUsers.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+getDemoUsers.head = (options?: RouteQueryOptions): RouteDefinition<'head'> => ({
+    url: getDemoUsers.url(options),
+    method: 'head',
+})
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+const getDemoUsersForm = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: getDemoUsers.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+getDemoUsersForm.get = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: getDemoUsers.url(options),
+    method: 'get',
+})
+
+/**
+* @see \App\Http\Controllers\Api\AuthController::getDemoUsers
+* @see app/Http/Controllers/Api/AuthController.php:75
+* @route '/api/demo-users'
+*/
+getDemoUsersForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
+    action: getDemoUsers.url({
+        [options?.mergeQuery ? 'mergeQuery' : 'query']: {
+            _method: 'HEAD',
+            ...(options?.query ?? options?.mergeQuery ?? {}),
+        }
+    }),
+    method: 'get',
+})
+
+getDemoUsers.form = getDemoUsersForm
+
+/**
 * @see \App\Http\Controllers\Api\AuthController::logout
 * @see app/Http/Controllers/Api/AuthController.php:60
 * @route '/api/logout'
@@ -248,6 +329,6 @@ meForm.head = (options?: RouteQueryOptions): RouteFormDefinition<'get'> => ({
 
 me.form = meForm
 
-const AuthController = { register, login, logout, me }
+const AuthController = { register, login, getDemoUsers, logout, me }
 
 export default AuthController

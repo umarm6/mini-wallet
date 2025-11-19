@@ -5,18 +5,49 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6225789b-24ef-4326-9e2e-c412a70b57a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6a9c6a8a-19a3-44bf-ae36-0d627c7dc9db.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c3814f79-69be-45af-8a63-2dfe1a02af63.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c3814f79-69be-45af-8a63-2dfe1a02af63.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Events/TransactionCompleted.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/TransactionCompleted.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/HandleInertiaRequests.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/TransferRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/TransferRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/fortify.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/fortify.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2025_11_17_143239_create_transactions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2025_11_17_143239_create_transactions_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/Api/AuthController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/Api/AuthController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/Api/TransactionController.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/Api/TransactionController.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/actions/App/Http/Controllers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/actions/Laravel/Fortify/Http/Controllers/AuthenticatedSessionController.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/actions/Laravel/Fortify/Http/Controllers/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/actions/Laravel/Fortify/Http/Controllers/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AppSidebar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AppSidebar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NavUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NavUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/wallet/TransactionHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/wallet/TransactionHistory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/wallet/TransferForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/wallet/TransferForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/wallet/WalletDashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/wallet/WalletDashboard.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/layouts/auth/AuthSimpleLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/layouts/auth/AuthSimpleLayout.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/pages/Dashboard.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Dashboard.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/types/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/types/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/auth/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/auth/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/routes/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/routes/login/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/types/api.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/types/api.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
   <component name="Git.Settings">
@@ -183,20 +214,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "development",
-    "last_opened_file_path": "/Users/sanaumar/Personal/Devs/mini-wallet/resources/js/pages/wallet",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/Users/sanaumar/Personal/Devs/mini-wallet/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.laravel_idea.eloquent_global_unguard&quot;: &quot;0&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/sanaumar/Personal/Devs/mini-wallet/resources/js/pages/wallet&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/sanaumar/Personal/Devs/mini-wallet/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/js/pages/wallet" />
@@ -222,10 +254,24 @@
       <option name="presentableId" value="Default" />
       <updated>1763360899980</updated>
       <workItem from="1763360901023" duration="2967000" />
+      <workItem from="1763458607544" duration="481000" />
+      <workItem from="1763459484092" duration="892000" />
+      <workItem from="1763462702480" duration="21430000" />
+      <workItem from="1763494883845" duration="158000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/pages/auth/Login.vue</url>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

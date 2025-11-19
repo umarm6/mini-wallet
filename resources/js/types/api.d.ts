@@ -1,3 +1,16 @@
+export interface DemoUser {
+    id: number;
+    name: string;
+    email: string;
+    balance: number;
+    transactions: number;
+    initials: string;
+}
+
+export interface DemoUsersResponse {
+    data: DemoUser[];
+}
+
 export interface User {
     id: number;
     name: string;
@@ -16,7 +29,6 @@ export interface Transaction {
     amount: string | number;
     commission_fee: string | number;
     status: 'completed' | 'pending' | 'failed';
-    reference?: string;
     type?: 'sent' | 'received';
     created_at: string;
     updated_at?: string;
@@ -36,23 +48,9 @@ export interface TransferResponse {
     errors?: Record<string, string[]>;
 }
 
-export interface TransactionHistoryResponse {
-    data: Transaction[];
-    balance: string | number;
-    links?: {
-        first: string;
-        last: string;
-        prev: string | null;
-        next: string | null;
-    };
-    meta?: {
-        current_page: number;
-        from: number;
-        last_page: number;
-        per_page: number;
-        to: number;
-        total: number;
-    };
+export interface LoginCredentials {
+    email: string;
+    password: string;
 }
 
 export interface RegisterCredentials {
@@ -62,19 +60,9 @@ export interface RegisterCredentials {
     password_confirmation: string;
 }
 
-export interface LoginCredentials {
-    email: string;
-    password: string;
-}
-
 export interface TransferRequest {
     receiver_id: number;
     amount: number | string;
-}
-
-export interface ApiError {
-    message: string;
-    errors?: Record<string, string[]>;
 }
 
 export interface PusherTransactionEvent {
@@ -87,4 +75,23 @@ export interface PusherTransactionEvent {
         balance: string | number;
         user_id: number;
     };
+}
+
+export interface ApiError {
+    message: string;
+    errors?: Record<string, string[]>;
+}
+
+
+export interface TransactionHistoryResponse {
+    data: {
+        data: Transaction[];
+        current_page: number;
+        from: number;
+        last_page: number;
+        per_page: number;
+        to: number;
+        total: number;
+    };
+    balance?: string;
 }

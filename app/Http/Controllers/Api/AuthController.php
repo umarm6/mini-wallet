@@ -68,4 +68,32 @@ class AuthController extends Controller
     {
         return response()->json($request->user());
     }
+
+    /**
+     * Get demo users for login page display
+     */
+    public function getDemoUsers(Request $request): JsonResponse
+    {
+        $demoUsers = User::select(['id', 'name', 'email', 'balance'])
+            ->withCount('sentTransactions')
+            ->withCount('receivedTransactions')
+            ->get()
+            ->map(function ($user) {
+                return [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'balance' => (float) $user->balance,
+                    'transactions' => $user->sent_transactions_count + $user->received_transactions_count,
+                    'initials' => collect(explode(' ', $user->name))
+                        ->map(fn($part) => strtoupper($part[0]))
+                        ->join(''),
+                ];
+            });
+
+        return response()->json([
+            'data' => $demoUsers,
+        ]);
+    }
+
 }

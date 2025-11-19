@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-        <h2 class="text-2xl font-bold text-white mb-6">Transaction History</h2>
+    <div class=" p-8 rounded-lg border border-gray-300">
+        <h2 class="text-2xl font-bold  mb-6">Transaction History</h2>
 
         <div v-if="transactions.length === 0" class="text-gray-400 text-center py-8">
             No transactions yet.
@@ -10,12 +10,12 @@
             <div
                 v-for="tx in transactions"
                 :key="tx.id"
-                class="bg-gray-700 p-4 rounded border border-gray-600"
+                class="bg-gray-300 p-4 rounded   "
                 :class="getTransactionClass(tx)"
             >
                 <div class="flex justify-between items-center">
                     <div>
-                        <p class="text-gray-300">
+                        <p class="text-gray-900">
                             {{ tx.type === 'sent' ? 'Sent to user #' : 'Received from user #' }}
                             <span class="font-semibold">{{ tx.to_id || tx.from_id }}</span>
                         </p>
@@ -60,7 +60,7 @@ const getTransactionClass = (tx: Transaction): string => {
 const loadTransactions = async (): Promise<void> => {
     try {
         const response = await apiClient.get<TransactionHistoryResponse>('/transactions');
-        transactions.value = response.data.data;
+        transactions.value = response.data.data.data;
     } catch (err) {
         console.error('Failed to load transactions:', err);
     }
@@ -70,7 +70,7 @@ onMounted(() => {
     loadTransactions();
 
     // Listen for transfer complete events
-    window.addEventListener('transferComplete', loadTransactions);
+    window.addEventListener('transactionCompleted', loadTransactions);
 });
 
 defineExpose({

@@ -1,23 +1,23 @@
 <template>
-    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700">
-        <h2 class="text-2xl font-bold text-white mb-6">Send Money</h2>
+    <div class=" p-8 rounded-lg border border-gray-300">
+        <h2 class="text-2xl font-bold  mb-6">Send Money</h2>
 
         <div v-if="error" class="mb-4 p-4 bg-red-900/30 border border-red-700 rounded text-red-200">
             {{ error }}
         </div>
 
-        <div v-if="success" class="mb-4 p-4 bg-green-900/30 border border-green-700 rounded text-green-200">
+        <div v-if="success" class="mb-4 p-4 bg-green-900/30 border border-green-700 rounded text-green-800">
             {{ success }}
         </div>
 
         <form @submit.prevent="handleTransfer" class="space-y-4">
             <div>
-                <label class="block text-gray-300 mb-2">Recipient User ID</label>
+                <label class="block  mb-2">Recipient User ID</label>
                 <input
                     v-model.number="form.receiver_id"
                     type="number"
                     required
-                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    class="w-full px-4 py-2  border border-gray-600 rounded placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     placeholder="Enter user ID"
                     min="1"
                 />
@@ -25,13 +25,13 @@
             </div>
 
             <div>
-                <label class="block text-gray-300 mb-2">Amount</label>
+                <label class="block  mb-2">Amount</label>
                 <input
                     v-model.number="form.amount"
                     type="number"
                     required
                     step="0.01"
-                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded text-white placeholder-gray-400 focus:outline-none focus:border-blue-500"
+                    class="w-full px-4 py-2  border border-gray-600 rounded  placeholder-gray-400 focus:outline-none focus:border-blue-500"
                     placeholder="0.00"
                     min="0.01"
                 />
@@ -47,7 +47,7 @@
             <button
                 type="submit"
                 :disabled="loading"
-                class="w-full bg-green-600 hover:bg-green-700 disabled:opacity-50 text-white font-bold py-2 px-4 rounded mt-6 transition"
+                class="w-full bg-green-600 hover:bg-green-700 disabled:opacity-50  font-bold py-2 px-4 rounded mt-6 transition"
             >
                 {{ loading ? 'Sending...' : 'Send Money' }}
             </button>
@@ -101,7 +101,7 @@ const handleTransfer = async (): Promise<void> => {
         form.amount = 0;
 
         // Emit event for parent component to refresh
-        window.dispatchEvent(new CustomEvent('transferComplete'));
+        window.dispatchEvent(new CustomEvent('transactionCompleted'));
     } catch (err) {
         const axiosError = err as AxiosError<{ errors?: { amount?: string[] } }>;
         error.value = axiosError.response?.data?.errors?.amount?.[0] || 'Transfer failed. Please try again.';

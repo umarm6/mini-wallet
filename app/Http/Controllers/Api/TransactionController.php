@@ -36,7 +36,7 @@ class TransactionController extends Controller
      */
     public function store(TransferRequest $request): JsonResponse
     {
-        try {
+         try {
             $result = $this->transactionService->transfer(
                 $request->user(),
                 $request->input('receiver_id'),

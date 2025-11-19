@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid')->unique();
-
             $table->foreignId('sender_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('receiver_id')->constrained('users')->onDelete('cascade');
             $table->decimal('amount', 20, 2); // Amount sent to receiver
             $table->decimal('commission_fee', 20, 2); // 1.5% fee
-            $table->enum('status', ['success','pending', 'failed']);
+            $table->enum('status', ['completed','pending', 'failed']);
             $table->string('reference')->unique(); // UUID for idempotency
             $table->timestamps();
 

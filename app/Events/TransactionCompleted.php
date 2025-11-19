@@ -36,8 +36,8 @@ class TransactionCompleted
     public function broadcastOn(): array
     {
         return [
-            new PrivateChannel(sprintf('transaction_user.%s', $this->transaction->sender_id)),
-            new PrivateChannel(sprintf('transaction_user.%s', $this->transaction->receiver_id)),
+            new PrivateChannel(sprintf('transaction_user_%s', $this->transaction->sender_id)),
+            new PrivateChannel(sprintf('transaction_user_%s', $this->transaction->receiver_id)),
 
         ];
     }

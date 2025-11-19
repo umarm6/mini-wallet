@@ -47,6 +47,7 @@ const { isMobile, state } = useSidebar();
                     :side-offset="4"
                 >
                     <UserMenuContent :user="user" />
+
                 </DropdownMenuContent>
             </DropdownMenu>
         </SidebarMenuItem>
